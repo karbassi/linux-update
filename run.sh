@@ -1,16 +1,25 @@
-URL='https://raw.githubusercontent.com/CoderDojoChi/linux-update/master'
+export URL='https://raw.githubusercontent.com/CoderDojoChi/linux-update/master'
 
-HOMEDIR=/home/coderdojochi
+export HOMEDIR=/home/coderdojochi
 
-SCRIPTDIR=/etc/init.d
-SCRIPT=coderdojochi-phonehome
+export SCRIPTDIR=/etc/init.d
+export SCRIPT=coderdojochi-phonehome
 
-CONFDIR=/etc/init
-CONF=$SCRIPT.conf
+export CONFDIR=/etc/init
+export CONF=$SCRIPT.conf
 
-CRONDIR=/etc/cron.d
+export CRONDIR=/etc/cron.d
 
-MACHINE_TYPE=`uname -m`
+export MACHINE_TYPE=`uname -m`
+
+export userrun() {
+    sudo -H -u coderdojochi bash -c "$1";
+}
+
+export output() {
+    echo "\n\n####################\n# $1\n####################\n\n";
+    userrun "notify-send --urgency=low '$1'";
+}
 
 
 # Update Script Running
