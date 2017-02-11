@@ -1,3 +1,6 @@
+# Remove old Google chrome
+apt-get autoremove --purge -y google-chrome-stable
+
 # Installing google-chrome-stable
 output "Installing google-chrome-beta"
 rm -rf $HOMEDIR/.config/midori \

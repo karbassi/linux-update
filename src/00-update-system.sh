@@ -3,6 +3,9 @@ output "Upgrading system"
 apt-get update
 apt-get dist-upgrade -y
 
+# Install required packages
+apt-get install software-properties-common
+
 # Setting up the dock
 output "Setting up the dock"
 rm $HOMEDIR/.config/plank/dock1/launchers/*.dockitem
