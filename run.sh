@@ -1,3 +1,8 @@
+if [ "$EUID" -ne 0 ]
+  then echo "Please run as root"
+  exit
+fi
+
 export URL='https://raw.githubusercontent.com/CoderDojoChi/linux-update/master'
 
 export HOMEDIR=/home/coderdojochi
