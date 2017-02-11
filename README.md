@@ -1,5 +1,5 @@
 # linux-update
 
-`sudo sh -c "$(curl -fsSL git.io/vt0Pc)"`
+`sudo sh -c "$(curl -fsSL git.io/vDwLi)"`
 
-https://git.io/vDwLi
+

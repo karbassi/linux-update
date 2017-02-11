@@ -9,4 +9,6 @@ fi
 apt-get update
 apt-get install -y git
 
-git clone https://github.com/CoderDojoChi/linux-update /var/coderdojochi
+git clone https://github.com/karbassi/linux-update /var/coderdojochi
+cd /var/coderdojochi
+git checkout feature/modularize
