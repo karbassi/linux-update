@@ -12,14 +12,17 @@ export CRONDIR=/etc/cron.d
 
 export MACHINE_TYPE=`uname -m`
 
-export userrun() {
+userrun() {
     sudo -H -u coderdojochi bash -c "$1";
 }
 
-export output() {
+output() {
     echo "\n\n####################\n# $1\n####################\n\n";
     userrun "notify-send --urgency=low '$1'";
 }
+
+export -f userrun
+export -f output
 
 
 # Update Script Running
