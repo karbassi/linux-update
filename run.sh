@@ -7,6 +7,8 @@ export URL='https://raw.githubusercontent.com/CoderDojoChi/linux-update/master'
 
 export HOMEDIR=/home/coderdojochi
 
+export SCRIPTROOT=/var/coderdojochi
+
 export SCRIPTDIR=/etc/init.d
 export SCRIPT=coderdojochi-phonehome
 
@@ -22,8 +24,12 @@ userrun() {
 }
 
 output() {
-    echo "\n\n####################\n# $1\n####################\n\n";
+    # echo "\n\n####################\n# $1\n####################\n\n";
     userrun "notify-send --urgency=low '$1'";
+}
+
+copy_files() {
+    userrun "cp $SCRIPTROOT/files$1 $1"
 }
 
 export -f userrun
@@ -33,4 +39,4 @@ export -f output
 # Update Script Running
 userrun 'notify-send --urgency=critical "Update Script Running"'
 
-bash ./src/*
+bash $SCRIPTROOT/src/*

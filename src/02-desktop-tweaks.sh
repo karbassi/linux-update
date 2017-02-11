@@ -1,7 +1,6 @@
 # Changing desktop background
 output "Changing desktop background"
-wget -qLO /usr/share/backgrounds/coderdojochi.png \
-     "$URL/usr/share/backgrounds/coderdojochi.png"
+copy_files "/usr/share/backgrounds/coderdojochi.png"
 
 mv /usr/share/backgrounds/elementaryos-default \
    /usr/share/backgrounds/elementaryos-default-bak
@@ -23,5 +22,4 @@ userrun 'gsettings set "org.gnome.desktop.session" "idle-delay" 0'
 
 # Disable guest login
 output "Disable guest login"
-wget -qLO /usr/share/lightdm/lightdm.conf/40-pantheon-greeter.conf \
-     "$URL/usr/share/lightdm/lightdm.conf/40-pantheon-greeter.conf"
+copy_files "/files/usr/share/lightdm/lightdm.conf/40-pantheon-greeter.conf"

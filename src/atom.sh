@@ -1,5 +1,5 @@
 # Uninstall atom
-apt-get remove -y atom
+apt-get autoremove --purge -y atom
 
 # # Installing atom
 # output "Installing atom"
